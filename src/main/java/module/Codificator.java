@@ -2,6 +2,7 @@ package module;
 
 public class Codificator {
     public Codificator() {
+        //nessuno stato
     }
 
     public String encode(String binaryString){
@@ -39,7 +40,6 @@ public class Codificator {
 
         i=0;
         for (byte e : outputInBytes) {
-            System.out.print(e);
             if(e==0){
                 outputInChars[i]='0';
             }
@@ -48,7 +48,6 @@ public class Codificator {
             }
             i++;
         }
-        System.out.print("\n");
 
         encodedString = String.copyValueOf(outputInChars);
         return encodedString;

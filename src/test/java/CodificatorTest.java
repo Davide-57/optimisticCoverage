@@ -1,5 +1,7 @@
 import module.Codificator;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -33,10 +35,16 @@ class CodificatorTest {
         assertEquals("",output);
     }
 
-    /*@Test
-    void testEncode001_1() {
-        module.Codificator codificator = new module.Codificator();
-        String output = codificator.encode("1");
-        assertEquals("1",output);
-    }*/
+    @ParameterizedTest
+    @CsvSource({
+            "01010, 11011",
+            "10001, 11011",
+            "0101000101, 1101101101",
+            "'', ''",
+    })
+    void testLevels(String input, String outputExpected) {
+        Codificator codificator = new Codificator();
+        String output = codificator.encode(input);
+        assertEquals(outputExpected,output);
+    }
 }
