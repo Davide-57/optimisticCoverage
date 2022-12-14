@@ -1,3 +1,4 @@
+import module.Codificator;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -34,7 +35,7 @@ class CodificatorTest {
 
     /*@Test
     void testEncode001_1() {
-        Codificator codificator = new Codificator();
+        module.Codificator codificator = new module.Codificator();
         String output = codificator.encode("1");
         assertEquals("1",output);
     }*/
